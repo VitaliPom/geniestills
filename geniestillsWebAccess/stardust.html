@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stardust</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	
+	<style type="text/css">
+		body{
+			overflow: hidden;
+			background-color: #0f0f20;
+			/*cursor: none;*/
+		    /* Full height */
+		    height: 100vh; 
+		    /* Center and scale the image nicely */
+    		background-position: center;
+    		background-repeat: no-repeat;
+    		background-size: cover;
+		}
+
+		  
+		.positionDiv {
+		    position: absolute;
+		    width: 24px;
+		    height: 24px;
+		    background-color: #ccc;
+		    border-radius:50%;
+		}
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+<div id="app">
+</div>
+
+<div id="targetElement">
+  <div class="positionDiv" id="position4"></div>
+</div>
+ 
+<script type="text/javascript">
+	$( document ).mousemove(function( event ) {
+	  $( "#position4" ).position({
+	    my: "left+7",
+	    of: event,
+	    collision: "fit"
+	  });
+	});
+
+	var directionArray = [1111,1110, 111, 110, 11,10, 1, 0];
+	var directionArray_index_ = 0;
+
+	var counter = 1;
+
+    setInterval(throwObj, 20);
+	
+
+	function throwObj(){
+		counter++;
+		if(counter > 657){
+			$("#position4").css("background-color", "transparent");
+			return;
+		}
+		directionArray_index_++;
+		if(directionArray_index_ >= 8){
+			directionArray_index_ = 0;
+		}
+		var directionArray_index = directionArray_index_;
+
+		var elem_J = $( "#position4" ).clone();
+		
+		elem_J.attr("id","position4_"+counter);
+		var colors_arr = ["#f1983a", "#ed7558", "#ea547a", "#a064a8", "#5b6db5", "#2595ad", "#18b199", "#6ebb82"];
+		var color_arr_index = parseInt(Math.random()*colors_arr.length);
+		elem_J.css("background-color", colors_arr[color_arr_index]);
+		$( "#targetElement" ).prepend(elem_J);
+		var elem = elem_J[0]; 
+		var max_pos = 150+Math.random()*72
+		var pos = 0;
+		var id = setInterval(frame, 5);    
+	    function frame() {
+	    	if (pos >= max_pos) {
+	      		
+	      		$(elem).animate({
+				   	 width: 2,
+				   	 height:2,
+				   	 'margin-left':'-50px',
+				 	 'margin-top':'-50px',
+				 	 'margin-bottom':'-50px',
+				 	 'margin-right':'-50px'
+			    },400 , function(){
+			    	$(elem).animate({
+					   		 width: 12,
+				   			 height: 12,
+				   	}, 460, function(){});
+			    });
+				clearInterval(id);	
+	    	} else {
+	      		pos+=2; 
+	      		if(directionArray[directionArray_index] == 11){
+	      			var posTop = parseInt(elem.style.top) + 1;
+	      			var posLeft = parseInt(elem.style.left) + 1;
+	      		}
+	      		if(directionArray[directionArray_index] == 10){
+	      			var posTop = parseInt(elem.style.top) + 1;
+	      			var posLeft = parseInt(elem.style.left) - 1;
+	      		}
+	      		if(directionArray[directionArray_index] == 1){
+	      			var posTop = parseInt(elem.style.top) - 1;
+	      			var posLeft = parseInt(elem.style.left) + 1;
+	      		}
+	      		if(directionArray[directionArray_index] == 0){
+	      			var posTop = parseInt(elem.style.top) - 1;
+	      			var posLeft = parseInt(elem.style.left) - 1;
+	      		}
+
+	      		if(directionArray[directionArray_index] == 1111){
+	      			var posTop = parseInt(elem.style.top);
+	      			var posLeft = parseInt(elem.style.left) + 1;
+	      		}
+	      		if(directionArray[directionArray_index] == 1110){
+	      			var posTop = parseInt(elem.style.top);
+	      			var posLeft = parseInt(elem.style.left) - 1;
+	      		}
+	      		if(directionArray[directionArray_index] == 111){
+	      			var posTop = parseInt(elem.style.top) - 1;
+	      			var posLeft = parseInt(elem.style.left);
+	      		}
+	      		if(directionArray[directionArray_index] == 110){
+	      			var posTop = parseInt(elem.style.top) + 1;
+	      			var posLeft = parseInt(elem.style.left) ;
+	      		}
+	      		elem.style.top =  posTop + 'px'; 
+	      		elem.style.left = posLeft + 'px'; 
+	    	}
+	  	}
+	}
+
+</script>
+
+</body>
+</html>
