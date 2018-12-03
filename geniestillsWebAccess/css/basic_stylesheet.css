@@ -1,0 +1,45 @@
+.bg_img{
+  max-height: 95%;
+  max-width: 95%;
+}
+.centered {
+  position: fixed; /* or absolute */
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+.icon_image{
+  height: 25vh;
+  width: 25vh;  
+  
+}
+.icon_image:hover{
+  height: 40vh;
+
+}
+
+.bottom_right{
+  position: fixed;
+}
+.bottom_right{
+  right: 5%;
+  bottom: 5%; 
+}
+.bottom_right:hover{
+  right: 9%;
+  bottom: 9%;
+}
+
+.child_image{
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.icon_image, .bottom_right{
+  -webkit-transition: right 0.5s, bottom 0.5s, height 0.5s; /* For Safari 3.1 to 6.0 */
+  transition: right 0.5s, bottom 0.5s, height 0.5s;
+}

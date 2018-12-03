@@ -1,49 +1,144 @@
 <html>
 	<head>
-		<style>
-			.bg_img{
-				max-height: 95vh;
-				max-width: 95vw;
-			}
-			.centered {
-  				position: fixed; /* or absolute */
-  				top: 40vh;
-  				left: 50vw;
-  				transform: translate(-50%, -50%);
-			}
-			html, body {margin: 0; height: 100%; overflow: hidden}
+
+		<link rel=stylesheet href="css/basic_stylesheet.css">
+		
+		<style>	
 			
-			.icon_image{
-				height: 8.00511201035vh;	
-				width: auto;	
+			.geniestillpng, video{
+				/*opacity: 0.85;*/
+				position: absolute;
+				
+				max-height: 35%;
+				transform: translate(-130%, 120%);
+			}
+			.childimage_copy{
+   				opacity: 0.15;
+			}
+
+			.share{
+				margin-top: 16px;
+				margin-right: 16px; 
 				
 			}
-			.icon_image:hover{
-				height: 18vh;
-			}
-
-			.bottom_right{
+			
+			.share_class{
 				position: fixed;
+				right: 2%;
+				top: 2%;
 			}
-			.bottom_right{
-				right: 4vh;
-				bottom: 4vh;	
-			}
-			.bottom_right:hover{
-				right: 6vh;
-				bottom: 6vh;
+			a, a:hover {
+				text-decoration: none !important;
+				
 			}
 
-
-			.icon_image, .bottom_right{
-    			-webkit-transition: right 0.5s, bottom 0.5s, height 0.5s; /* For Safari 3.1 to 6.0 */
-    			transition: right 0.5s, bottom 0.5s, height 0.5s;
+			 
+			.Download{
+				/*opacity: 0.85;*/
+				position: fixed;
+				bottom: 5%;
+				right: 50%;
+				transform: translate(-50%, -50%);
 			}
 
 			
-			/*botton icon image*/
+			.bottom_left{
+			    position: absolute;
+			    bottom: 14%;
+			    left: 5%;
+			}
+
+			
+			.round-button {
+			
+			    width:72px;
+			    height:72px;
+			    line-height:48px;
+			    border: 4px solid white;
+			    border-radius: 50%;
+			    color: white;
+			    text-align:center;
+			    text-decoration:none;
+			    background: #FF851C;
+			    box-shadow: 0 0 4px black;
+			    font-size:60px;
+			    font-weight:bold;
+			    position: absolute;
+
+
+			    -webkit-transition-property: -webkit-transform;
+			    -moz-transition-property: -moz-transform;
+			    -o-transition-property: -o-transform;
+			     transition-property: transform;
+
+			   -webkit-transition-duration: 0.6s;
+			    -moz-transition-duration: 0.6s;
+			    -o-transition-duration: 0.6s;
+			    transition-duration: 0.6s;
+
+			}
+
+		
+			.round-button:hover {
+		     	-webkit-transform: rotate(-180deg);
+		   	    -moz-transform:    rotate(-180deg);
+		   	    -ms-transform:     rotate(-180deg);
+		   	    -o-transform:      rotate(-180deg);
+			    transform:         rotate(-180deg);
+
+			   color: white;
+			}
+
+
+			.share:hover{
+				opacity: 0.75;
+
+			}
+		
+			.vertical {
+				position: absolute;
+			    background-color: white; 
+			    width: 10px; 
+			    height: 30px; 
+			    top: 17px; 
+			    left: 27px; 
+			    transition-property: border-radius;
+			    transition-duration: 0.9s;
+			}
+
+			.horizontal {
+				position: absolute; 
+				background-color: white; 
+				width: 30px; 
+				height: 10px; 
+				top: 27px; 
+				left: 17px;
+				transition-property: border-radius;
+			    transition-duration: 0.9s;
+			}
+
+		
+			.round-button:hover .vertical{
+			    width: 20px;
+			    height: 20px; 
+			    top: 22px;
+			    left: 22px; 
+			    border-radius: 50%; 
+
+			}
+
+			.round-button:hover .horizontal{
+				width: 20px;
+				height: 20px;
+				top: 22px;
+				left: 22px;
+				border-radius: 50%;
+			}		
+			
+
 
 		</style>
+		
 		<title>
 			GenieStills	 
 		</title>
@@ -51,17 +146,60 @@
      		name='viewport' 
      		content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' 
 		/>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 	</head>
 	<body>
+		
+		<div class="share_class">
+			<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.geniestills.com" >
+	    		<img src="img/Facebook.png" class="share">
+			</a>
+			<a href="https://www.blogger.com/blog-this.g?u=http://www.geniestills.com" >
+	    		<img src="img/Blogger.png" class="share">
+	    	</a>
+	    	<a href="whatsapp://send?text=www.geniestills.com" data-action="share/whatsapp/share" >
+	    		<img src="img/Whatsapp.png" class="share"> 
+	    	</a>
+	    	<a href="https://twitter.com/share?url=http://www.geniestills.com" >
+	    		<img src="img/Twitter.png" class="share">
+	    	</a>
+	    	<a href="https://plus.google.com/share?url=http://www.geniestills.com" >
+	    		<img src="img/Google.png" class="share">
+	    	</a>
+		</div>
 		<p align="center">
 			<img src="img/GenieStills5.png" alt="logo.com" class="centered bg_img">
 	    </p>	
-			
-		<p align="right">
-			<img src="img/icon_image.png" alt="myartwork" class="bottom_right icon_image">
-	    </p>	
+		
+		<div align="left" class="bottom_left">
+				<a href="#" class="round-button">
+				    <div class="vertical"></div>
+				   	<div class="horizontal"></div>
+			</a>
+		</div>
 
-	    <script type="text/javascript">document.addEventListener('contextmenu', event => event.preventDefault());</script>
+		<div align="right" class="bottom_right icon_image" >
+				<img src="img/icon_image.png" alt="myartwork" class="child_image">
+	    		<img src="geniestill.png" alt="geniestillpng" class="geniestillpng">
+	    		<video autoplay loop muted>
+  					<source src="geniestills.mp4" type="video/mp4">  			  		
+				</video>
+				<img src="img/icon_image.png" alt="myartwork" class="child_image childimage_copy">
+
+	    </div>
+
+	    
+	    <a href="Download/GenieStill2PC.zip" class="btn btn-lg btn-warning Download"><span class="glyphicon glyphicon-save"></span> Download</a>
+
+		<script type="text/javascript">
+	    	// prevent right click in order to allow right directory click on mobile phones
+	    	document.addEventListener('contextmenu', event => event.preventDefault());
+		</script>
+	
+	
+			
+		
+
 
 	</body>
 </html>
