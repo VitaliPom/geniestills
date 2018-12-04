@@ -9,8 +9,6 @@
 
 <p align="center"><img src="https://raw.githubusercontent.com/VitaliPom/geniestills/master/GSPMenu4.2.png" alt="facebookapp.com" ></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/VitaliPom/geniestills/master/EffectedKeyboard_200_200.png" alt="myandrooidapp(EffectedKeyboard).com" ></p>
-
 
 <p align="center">This repository is only for Vitali Pomanitski. All copyrights reserved to ©Vitali Pomanitski Copr. Reserved.</p> 
 <p align="center"> @vitali.pom </p>
