@@ -1,0 +1,98 @@
+.round-button {
+
+    width:72px;
+    height:72px;
+    line-height:48px;
+    border: 4px solid white;
+    border-radius: 50%;
+    color: white;
+    text-align:center;
+    text-decoration:none;
+    background: #FF851C;
+    box-shadow: 0 0 4px black;
+    font-size:60px;
+    font-weight:bold;
+    position: absolute;
+
+
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+     transition-property: transform;
+
+   -webkit-transition-duration: 0.4s;
+    -moz-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+
+}
+
+
+.round-button:hover {
+ 	-webkit-transform: rotate(-180deg);
+    -moz-transform:    rotate(-180deg);
+    -ms-transform:     rotate(-180deg);
+    -o-transform:      rotate(-180deg);
+    transform:         rotate(-180deg);
+ 
+    color: white;
+}
+
+
+.vertical {
+	position: absolute;
+    background-color: white; 
+    width: 10px; 
+    height: 30px; 
+    top: 17px; 
+    left: 27px; 
+    
+    -webkit-transition-property: border-radius;
+    -moz-transition-property: border-radius;
+    -o-transition-property: border-radius;
+     transition-property: border-radius;
+
+   -webkit-transition-duration: 0.75s;
+    -moz-transition-duration: 0.75s;
+    -o-transition-duration: 0.75s;
+    transition-duration: 0.75s;
+}
+
+
+.horizontal {
+	position: absolute; 
+	background-color: white; 
+	width: 30px; 
+	height: 10px; 
+	top: 27px; 
+	left: 17px;
+    
+    -webkit-transition-property: border-radius;
+    -moz-transition-property: border-radius;
+    -o-transition-property: border-radius;
+     transition-property: border-radius;
+
+   -webkit-transition-duration: 0.85s;
+    -moz-transition-duration: 0.85s;
+    -o-transition-duration: 0.85s;
+    transition-duration: 0.85s;
+
+}
+
+
+.round-button:hover .vertical{
+    width: 20px;
+    height: 20px; 
+    top: 22px;
+    left: 22px; 
+    border-radius: 50%; 
+
+}
+
+.round-button:hover .horizontal{
+	width: 20px;
+	height: 20px;
+	top: 22px;
+	left: 22px;
+	border-radius: 50%;
+}	
