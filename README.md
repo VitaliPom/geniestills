@@ -6,7 +6,7 @@
 
 
 
-<p align="center">This repository is only for Vitali Pomanitski. All copyrights reserved to ©Vitali Pomanitski Copr. Reserved.</p> 
+
 <p align="center"> @vitali.pom </p>
 
 
