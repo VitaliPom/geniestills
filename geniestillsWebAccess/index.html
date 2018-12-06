@@ -89,13 +89,32 @@
 		<script type="text/javascript">
 	    	// prevent right click in order to allow right directory click on mobile phones
 	    	document.addEventListener('contextmenu', event => event.preventDefault());
-
+	    	var counter = 0;	
+	    	var counter2 = 0;
 	    	$(document).ready(function(){
-			  $('#menu').click(function(){
-			    $('.drop-down').toggleClass('drop-down--active');
+			  $('#menu').mouseenter(function(){
+			  	$('.drop-down').removeClass('drop-down--active');
+			    $('.drop-down').addClass('drop-down--active');
 			  });
+			  $('#menu').mouseleave(function(){
+			  	counter++;
+			  })
 			});
 			
+			$(document).ready(function(){
+			  $('#menu').click(function(){
+			  	counter++;
+			  	 if(counter2 > 4){
+			  		counter = 3;
+			  	 }
+			  	if(counter > 2){
+			    	$('.drop-down').removeClass('drop-down--active');
+			    	counter = 0;
+			    	counter2++;
+			  	}
+			  });
+			});
+
 			$(document).ready(function(){
 			  $('#CV').click(function(){
 			    window.open("CV.pdf");
